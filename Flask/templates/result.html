@@ -1,0 +1,28 @@
+<html>
+
+    <h1>Here is your result!</h1>
+    {% if results["Total"]>=50%}
+    <h2>
+        You have cleared the exam!
+        <p>Marks:{{results["Total"]}}</p>
+    </h2>
+    {% else%}
+    <h2>You have failed the exam!</h2>
+    <p>Marks:{{results["Total"]}}</p>
+{% endif %}
+
+<h3> Mark Sheet</h3>
+<table border="2">
+    <tr>
+        {% for key,value in results.items()%}
+        <th>{{key}}</th>
+    </tr>
+    <tr>
+        <td>{{value}}</td>
+    </tr>
+    {%endfor%}
+
+
+</table>
+
+</html>
